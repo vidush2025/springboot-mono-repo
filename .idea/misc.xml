@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/learningSpringBoot/pom.xml" />
+        <option value="$PROJECT_DIR$/internalWorkingOfSpring/pom.xml" />
       </list>
     </option>
   </component>
