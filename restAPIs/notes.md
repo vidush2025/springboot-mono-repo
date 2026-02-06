@@ -21,4 +21,18 @@ The client requests goes through to the server and all buisness logic including 
 - creates a bean and helps in mapping of a controller.
 
 - @GetMapping is just like a get request on the desired server port which will return a JSON response to the client. It helps to determine the routes, ex: "/student" 
-- 
+
+# @RequiredArgsConstructor
+- creates a constructor automatically for all "private final -" variables
+
+
+# BASIC FLOW OF CLIENT <-> DB 
+
+- The client sends a request to persistent layer using a RestAPI(get, post etc.),which is handled by a controller, here StudentController.
+- The controller is like a route file and NOT like a javascript controller where we have all business logic in the controller. The controller ONLY MAPS the client request to the correct service.
+- When a service interface is called, the service class performs all business logic and functions, and connects with the repository (database) for data communication.
+- This helps in maintaining a block between client and database.
+- Finally the repository directly handles database quries, and sends data to the service, which sends DTO to the controller.
+- The controller then sends back the data to the client as a json response.
+
+CLIENT --RestAPI--> CONTROLLER --Mapping & DTO--> SERVICE --Entity--> REPOSITORY --Query--> DATABASE --Query Results--> REPOSITORY --Entity--> SERVICE --Result DTO--> CONTROLLER --Response JSON--> CLIENT
