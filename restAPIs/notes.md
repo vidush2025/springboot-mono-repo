@@ -36,3 +36,16 @@ The client requests goes through to the server and all buisness logic including 
 - The controller then sends back the data to the client as a json response.
 
 CLIENT --RestAPI--> CONTROLLER --Mapping & DTO--> SERVICE --Entity--> REPOSITORY --Query--> DATABASE --Query Results--> REPOSITORY --Entity--> SERVICE --Result DTO--> CONTROLLER --Response JSON--> CLIENT
+
+
+# @PathVariable
+
+- Used to send dynamic parameter requests in api calls, for example, sending "id" for a getStudentById api call
+- Can be used to fetch only relevant and filtered data from the database
+
+# ModelMapper
+
+- This maps one Database schema/entity to another(ex: Student -> StudentDto)
+- It uses the field names in the entity definition to map the elements, thats why the two entities must have similar/same field names in the class definition.
+- It also requires the "@NoArgsConstructor" annotation to map the entities properly, otherwise throws error
+- ModelMapper is a very reusable and efficient Springboot library/dependency, thus can be placed in the "config" folder so that it may be accessed by all the service classes when needed.
