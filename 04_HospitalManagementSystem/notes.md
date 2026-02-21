@@ -63,5 +63,9 @@ Whenever a query is made from a method, the Transactional annotation helps to se
 
 It also helps in fetching the cached data, if 3-4 queries are written together for the same entity/object, this annotation makes sure ONLY the first query is ran and all others simply fetch data from the cached Persistent state. It also makes the DB queries much faster.
 
+# @Table Annotation
+This annotation helps us to change the configuration of the table created for our Entity. We can perform all sorts of operations ranging from changing the name of the table, to adding unique constraints (fiels which must be unique among all entities), and adding indices on required fields (index-es).
+Similarly, we have @Coloumn annotation which helps to define characters of a single column in a table. We can enforce rules like  "unique: true", "editable: false" etc., to make the column verify and validate the data before any row is updated/created.
+
 
     
