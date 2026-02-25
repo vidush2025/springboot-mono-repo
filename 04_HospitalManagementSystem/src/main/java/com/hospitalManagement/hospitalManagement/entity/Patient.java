@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @ToString
@@ -34,4 +35,11 @@ public class Patient {
 
     private String sex;
     private String email;
+
+    @OneToOne //owning side
+    @JoinColumn
+    private Insurance insurance;
+
+    @OneToMany(mappedBy = "patient")
+    private List<Appointment> appointments;
 }

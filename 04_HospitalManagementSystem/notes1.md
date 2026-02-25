@@ -68,4 +68,5 @@ This annotation helps us to change the configuration of the table created for ou
 Similarly, we have @Coloumn annotation which helps to define characters of a single column in a table. We can enforce rules like  "unique: true", "editable: false" etc., to make the column verify and validate the data before any row is updated/created.
 
 
+
     
