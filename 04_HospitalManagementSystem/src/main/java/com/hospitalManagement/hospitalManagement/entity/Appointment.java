@@ -25,7 +25,7 @@ public class Appointment {
     @Column(length = 500)
     private String desc; //reason for appointment
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(nullable = false)
     private Patient patient;
 
